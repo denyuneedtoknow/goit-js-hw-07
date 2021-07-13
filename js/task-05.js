@@ -1,6 +1,19 @@
 const input = document.getElementById("name-input")
 const username = document.getElementById("name-output")
-console.log(input);
-console.log(username);
-input.addEventListener('input', updateUsername)
+
+function inputChange(event) {
+    if (input.value !== '') {
+        username.textContent = event.currentTarget.value
+    } else {
+        username.textContent = "незнакомец"
+    }
+}
+
+input.addEventListener('input', inputChange)
+
+
+
+
+
+
 
