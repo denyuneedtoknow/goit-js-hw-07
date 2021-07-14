@@ -1,13 +1,19 @@
 const input = document.getElementById("validation-input")
-console.log(input);
-const validQuantity = input.dataset.length
-console.log(validQuantity);
-function inputValidator(event) {
-    // console.log(event.currentTarget.value.length);
+
+const validQuantity = Number(input.dataset.length)
+
+function inputBlured(event) {
+
     if (event.currentTarget.value.length === validQuantity) {
-        console.log(true);
+        input.classList.add('valid')
+        input.classList.remove('invalid')
+    } else {
+        console.log(false);
+        input.classList.add('invalid')
+        input.classList.remove('valid')
     }
+
 }
 
+input.addEventListener('blur', inputBlured)
 
-input.addEventListener('input', inputValidator)
