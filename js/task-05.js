@@ -2,7 +2,7 @@ const input = document.getElementById("name-input")
 const username = document.getElementById("name-output")
 
 function inputChange(event) {
-    if (input.value !== '') {
+    if (input.value.trim() !== '') {
         username.textContent = event.currentTarget.value
     } else {
         username.textContent = "незнакомец"
