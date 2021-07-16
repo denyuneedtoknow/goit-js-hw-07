@@ -16,21 +16,12 @@ const galleryEl = document.querySelector("#gallery");
 galleryEl.style.display = "flex";
 galleryEl.style.listStyleType = "none";
 
-
+const galleryArray = []
 const galleryMaking = images.forEach((image) => {
-  galleryEl.insertAdjacentHTML('beforeEnd', `<li>  <img src = ${image.url}, alt = ${image.alt} height = 200 style="margin-right:15px">  </img></li>`)
-  console.log(image.alt);
+  const itemEl = document.createElement('li')
+  itemEl.insertAdjacentHTML('beforeEnd', `<img src = ${image.url}, alt = ${image.alt} height = 200 style="margin-right:15px">  </img>`)
+  galleryArray.push(itemEl)
+  console.log(galleryArray);
 })
+galleryEl.append(...galleryArray)
 
-
-// const galleryMaking = images.forEach((image) => {
-//   const galleryItemEl = document.createElement("li");
-//   const imageEl = document.createElement("img");
-//   imageEl.setAttribute("src", image.url);
-//   imageEl.setAttribute("alt", image.alt);
-//   imageEl.setAttribute("style", "height:200px");
-//   galleryItemEl.style.marginRight = "20px";
-//   galleryItemEl.appendChild(imageEl);
-
-//   galleryEl.appendChild(galleryItemEl);
-// });
